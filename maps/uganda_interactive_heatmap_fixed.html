@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7d5796610f15fe637d7bf4e471eecf96 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_7d5796610f15fe637d7bf4e471eecf96" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7d5796610f15fe637d7bf4e471eecf96 = L.map(
+                "map_7d5796610f15fe637d7bf4e471eecf96",
+                {
+                    center: [1.37, 32.29],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_58668daa85b50bba635e89652ff20bdd = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_58668daa85b50bba635e89652ff20bdd.addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+            var heat_map_78d6d28ac08b11adfaaa6c418d43d940 = L.heatLayer(
+                [[2.25, 32.9, 14407.908333333333], [-0.62, 30.65, 14343.641666666666], [0.41, 32.57, 14265.383333333333], [0.25, 32.58, 12859.55], [1.65, 31.35, 11566.275], [-0.33, 31.73, 11525.558333333332], [0.36, 32.71, 9884.5], [1.55, 33.55, 9265.133333333333], [0.68, 30.2, 8966.241666666667], [1.08, 34.18, 7984.583333333333], [2.85, 31.05, 7061.841666666666], [-1.25, 29.95, 6790.783333333334], [0.45, 33.6, 6742.308333333333], [0.7, 33.2, 6484.766666666666], [0.5, 31.95, 6108.566666666667], [1.35, 34.35, 6092.141666666666], [1.45, 32.1, 6008.141666666666], [-0.55, 30.15, 5693.358333333334], [2.95, 32.3, 5624.291666666667], [0.55, 34.05, 5585.775], [0.55, 32.85, 5320.208333333333], [0.15, 31.55, 5237.55], [2.55, 34.65, 4477.075], [3.1, 32.9, 4111.666666666667], [1.05, 33.95, 4066.19], [3.35, 31.0, 3892.325], [0.45, 33.2, 3800.0583333333334], [0.18, 30.08, 2882.7], [3.75, 34.65, 2148.05], [0.315, 32.583, 1412.7583333333334]],
+                {
+  "minOpacity": 0.4,
+  "maxZoom": 18,
+  "radius": 30,
+  "blur": 20,
+}
+            );
+        
+    
+            heat_map_78d6d28ac08b11adfaaa6c418d43d940.addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+            var circle_marker_c74ae5ce35314b4072ca5ae7ea83996b = L.circleMarker(
+                [2.25, 32.9],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_d486c4715062c1e45c9f382f47877f75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_25b3f61b54b14f2c2ff87f7bda27b882 = $(`<div id="html_25b3f61b54b14f2c2ff87f7bda27b882" style="width: 100.0%; height: 100.0%;">         <b>North Kyoga</b><br>         Average Cases: 14407.91<br>         Hotspot: Yes         </div>`)[0];
+                popup_d486c4715062c1e45c9f382f47877f75.setContent(html_25b3f61b54b14f2c2ff87f7bda27b882);
+            
+        
+
+        circle_marker_c74ae5ce35314b4072ca5ae7ea83996b.bindPopup(popup_d486c4715062c1e45c9f382f47877f75)
+        ;
+
+        
+    
+    
+            var circle_marker_0e8f68f1bb764f5f5445118ac1ce37e4 = L.circleMarker(
+                [-0.62, 30.65],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_392c067f635b760dc45374cdbe4eeec1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb212d62f2785113f070ef2f4a4b7fe3 = $(`<div id="html_eb212d62f2785113f070ef2f4a4b7fe3" style="width: 100.0%; height: 100.0%;">         <b>Rwizi</b><br>         Average Cases: 14343.64<br>         Hotspot: Yes         </div>`)[0];
+                popup_392c067f635b760dc45374cdbe4eeec1.setContent(html_eb212d62f2785113f070ef2f4a4b7fe3);
+            
+        
+
+        circle_marker_0e8f68f1bb764f5f5445118ac1ce37e4.bindPopup(popup_392c067f635b760dc45374cdbe4eeec1)
+        ;
+
+        
+    
+    
+            var circle_marker_72824881caf5f4121d30d501d3475a1d = L.circleMarker(
+                [0.41, 32.57],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_c175d33384c32fccf95e0253006364f3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a5fec634c54470b7bdbc8aa29aaea7f5 = $(`<div id="html_a5fec634c54470b7bdbc8aa29aaea7f5" style="width: 100.0%; height: 100.0%;">         <b>KMP North</b><br>         Average Cases: 14265.38<br>         Hotspot: Yes         </div>`)[0];
+                popup_c175d33384c32fccf95e0253006364f3.setContent(html_a5fec634c54470b7bdbc8aa29aaea7f5);
+            
+        
+
+        circle_marker_72824881caf5f4121d30d501d3475a1d.bindPopup(popup_c175d33384c32fccf95e0253006364f3)
+        ;
+
+        
+    
+    
+            var circle_marker_42a0ecc1236cf63cbc0e6aa4b0facc39 = L.circleMarker(
+                [0.25, 32.58],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_d2079f311a3864196e11ac5199e83d13 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d996e9c366de8915b5fda757b4bf71ef = $(`<div id="html_d996e9c366de8915b5fda757b4bf71ef" style="width: 100.0%; height: 100.0%;">         <b>KMP South</b><br>         Average Cases: 12859.55<br>         Hotspot: Yes         </div>`)[0];
+                popup_d2079f311a3864196e11ac5199e83d13.setContent(html_d996e9c366de8915b5fda757b4bf71ef);
+            
+        
+
+        circle_marker_42a0ecc1236cf63cbc0e6aa4b0facc39.bindPopup(popup_d2079f311a3864196e11ac5199e83d13)
+        ;
+
+        
+    
+    
+            var circle_marker_813a0369ea53f434598c877b319c1aa6 = L.circleMarker(
+                [1.65, 31.35],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_3190c0da6c0d152730f47e9fa731fcfc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ddbdb45dad3f90e3d4055378121fe9d9 = $(`<div id="html_ddbdb45dad3f90e3d4055378121fe9d9" style="width: 100.0%; height: 100.0%;">         <b>Albertine</b><br>         Average Cases: 11566.27<br>         Hotspot: Yes         </div>`)[0];
+                popup_3190c0da6c0d152730f47e9fa731fcfc.setContent(html_ddbdb45dad3f90e3d4055378121fe9d9);
+            
+        
+
+        circle_marker_813a0369ea53f434598c877b319c1aa6.bindPopup(popup_3190c0da6c0d152730f47e9fa731fcfc)
+        ;
+
+        
+    
+    
+            var circle_marker_32fef7646a0f7a59204de5b77630d1ab = L.circleMarker(
+                [-0.33, 31.73],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_1b21e27901562c26aaa38d46e041c580 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92f0ce6322b3552f2b2cf685171f7280 = $(`<div id="html_92f0ce6322b3552f2b2cf685171f7280" style="width: 100.0%; height: 100.0%;">         <b>Greater Masaka</b><br>         Average Cases: 11525.56<br>         Hotspot: Yes         </div>`)[0];
+                popup_1b21e27901562c26aaa38d46e041c580.setContent(html_92f0ce6322b3552f2b2cf685171f7280);
+            
+        
+
+        circle_marker_32fef7646a0f7a59204de5b77630d1ab.bindPopup(popup_1b21e27901562c26aaa38d46e041c580)
+        ;
+
+        
+    
+    
+            var circle_marker_03c90fe0664b3b7dcba6d212fddff860 = L.circleMarker(
+                [0.36, 32.71],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_73f5efb4d5d1d8a192f3f1b195d38070 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d736a1665efd43218140ecfee4269ae8 = $(`<div id="html_d736a1665efd43218140ecfee4269ae8" style="width: 100.0%; height: 100.0%;">         <b>KMP East</b><br>         Average Cases: 9884.50<br>         Hotspot: No         </div>`)[0];
+                popup_73f5efb4d5d1d8a192f3f1b195d38070.setContent(html_d736a1665efd43218140ecfee4269ae8);
+            
+        
+
+        circle_marker_03c90fe0664b3b7dcba6d212fddff860.bindPopup(popup_73f5efb4d5d1d8a192f3f1b195d38070)
+        ;
+
+        
+    
+    
+            var circle_marker_a25c2cca827bf20fdae8f63abda552f4 = L.circleMarker(
+                [1.55, 33.55],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_e4b82cdd32ab636b99f0f7a22853a794 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_589cf52221818a68750165ecb2b8a5f1 = $(`<div id="html_589cf52221818a68750165ecb2b8a5f1" style="width: 100.0%; height: 100.0%;">         <b>East Kyoga</b><br>         Average Cases: 9265.13<br>         Hotspot: No         </div>`)[0];
+                popup_e4b82cdd32ab636b99f0f7a22853a794.setContent(html_589cf52221818a68750165ecb2b8a5f1);
+            
+        
+
+        circle_marker_a25c2cca827bf20fdae8f63abda552f4.bindPopup(popup_e4b82cdd32ab636b99f0f7a22853a794)
+        ;
+
+        
+    
+    
+            var circle_marker_22a8dcb9eeefa08898137b7e1060723f = L.circleMarker(
+                [0.68, 30.2],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_ec2b2415c08b875118aa5d221d3b0b7f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41337e7933f1f86ad47b3024473c7393 = $(`<div id="html_41337e7933f1f86ad47b3024473c7393" style="width: 100.0%; height: 100.0%;">         <b>Rwenzori West</b><br>         Average Cases: 8966.24<br>         Hotspot: No         </div>`)[0];
+                popup_ec2b2415c08b875118aa5d221d3b0b7f.setContent(html_41337e7933f1f86ad47b3024473c7393);
+            
+        
+
+        circle_marker_22a8dcb9eeefa08898137b7e1060723f.bindPopup(popup_ec2b2415c08b875118aa5d221d3b0b7f)
+        ;
+
+        
+    
+    
+            var circle_marker_432bc8f1a028d5f94485a2236b70d32d = L.circleMarker(
+                [1.08, 34.18],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_5af5bb408e0b269737a905cd39982f73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5cd4c412f1a6ea7786b3bc3067904230 = $(`<div id="html_5cd4c412f1a6ea7786b3bc3067904230" style="width: 100.0%; height: 100.0%;">         <b>Elgon</b><br>         Average Cases: 7984.58<br>         Hotspot: No         </div>`)[0];
+                popup_5af5bb408e0b269737a905cd39982f73.setContent(html_5cd4c412f1a6ea7786b3bc3067904230);
+            
+        
+
+        circle_marker_432bc8f1a028d5f94485a2236b70d32d.bindPopup(popup_5af5bb408e0b269737a905cd39982f73)
+        ;
+
+        
+    
+    
+            var circle_marker_f1d536058b414590e4c446833d58b9b2 = L.circleMarker(
+                [2.85, 31.05],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_438e80a6958137e9f8d6308dfe6b5fb9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_67ecc946c7877dae0766366f4cc31814 = $(`<div id="html_67ecc946c7877dae0766366f4cc31814" style="width: 100.0%; height: 100.0%;">         <b>West Nile</b><br>         Average Cases: 7061.84<br>         Hotspot: No         </div>`)[0];
+                popup_438e80a6958137e9f8d6308dfe6b5fb9.setContent(html_67ecc946c7877dae0766366f4cc31814);
+            
+        
+
+        circle_marker_f1d536058b414590e4c446833d58b9b2.bindPopup(popup_438e80a6958137e9f8d6308dfe6b5fb9)
+        ;
+
+        
+    
+    
+            var circle_marker_b913a0b6190895710fcd9f8b69091d78 = L.circleMarker(
+                [-1.25, 29.95],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_4d1764d9f81eed86991e00276dd7d797 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9affc1cd214bd917f7db9662464c20b4 = $(`<div id="html_9affc1cd214bd917f7db9662464c20b4" style="width: 100.0%; height: 100.0%;">         <b>Kigezi</b><br>         Average Cases: 6790.78<br>         Hotspot: No         </div>`)[0];
+                popup_4d1764d9f81eed86991e00276dd7d797.setContent(html_9affc1cd214bd917f7db9662464c20b4);
+            
+        
+
+        circle_marker_b913a0b6190895710fcd9f8b69091d78.bindPopup(popup_4d1764d9f81eed86991e00276dd7d797)
+        ;
+
+        
+    
+    
+            var circle_marker_17d478fd6e126e4f3470c97fe178c617 = L.circleMarker(
+                [0.45, 33.6],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_b92d025a783c7f6c63e06b75736912da = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_374470fa213f7be81bef514791bca218 = $(`<div id="html_374470fa213f7be81bef514791bca218" style="width: 100.0%; height: 100.0%;">         <b>Busoga East</b><br>         Average Cases: 6742.31<br>         Hotspot: No         </div>`)[0];
+                popup_b92d025a783c7f6c63e06b75736912da.setContent(html_374470fa213f7be81bef514791bca218);
+            
+        
+
+        circle_marker_17d478fd6e126e4f3470c97fe178c617.bindPopup(popup_b92d025a783c7f6c63e06b75736912da)
+        ;
+
+        
+    
+    
+            var circle_marker_c5d213d844e7d5916be5f035b87b2196 = L.circleMarker(
+                [0.7, 33.2],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_bebc5a7d86f1752c65c64d49bdb6ad2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_872a73ae27b2ac97f4de3f430f0f8175 = $(`<div id="html_872a73ae27b2ac97f4de3f430f0f8175" style="width: 100.0%; height: 100.0%;">         <b>Busoga North</b><br>         Average Cases: 6484.77<br>         Hotspot: No         </div>`)[0];
+                popup_bebc5a7d86f1752c65c64d49bdb6ad2a.setContent(html_872a73ae27b2ac97f4de3f430f0f8175);
+            
+        
+
+        circle_marker_c5d213d844e7d5916be5f035b87b2196.bindPopup(popup_bebc5a7d86f1752c65c64d49bdb6ad2a)
+        ;
+
+        
+    
+    
+            var circle_marker_c2b9fb448c1bdcb0066d345a6858cce8 = L.circleMarker(
+                [0.5, 31.95],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_03840e790bf16cc92aa848aa8e157be3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dfd6648f62ec52d3e227701e41b325f1 = $(`<div id="html_dfd6648f62ec52d3e227701e41b325f1" style="width: 100.0%; height: 100.0%;">         <b>Wamala</b><br>         Average Cases: 6108.57<br>         Hotspot: No         </div>`)[0];
+                popup_03840e790bf16cc92aa848aa8e157be3.setContent(html_dfd6648f62ec52d3e227701e41b325f1);
+            
+        
+
+        circle_marker_c2b9fb448c1bdcb0066d345a6858cce8.bindPopup(popup_03840e790bf16cc92aa848aa8e157be3)
+        ;
+
+        
+    
+    
+            var circle_marker_6bbcab18a598f960003842ff2b3f8996 = L.circleMarker(
+                [1.35, 34.35],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_ad3967e199d581510a5e10a4a0c1bdfc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_950b61a8a11b23a075d7d87a9e8fb1c8 = $(`<div id="html_950b61a8a11b23a075d7d87a9e8fb1c8" style="width: 100.0%; height: 100.0%;">         <b>Sipi</b><br>         Average Cases: 6092.14<br>         Hotspot: No         </div>`)[0];
+                popup_ad3967e199d581510a5e10a4a0c1bdfc.setContent(html_950b61a8a11b23a075d7d87a9e8fb1c8);
+            
+        
+
+        circle_marker_6bbcab18a598f960003842ff2b3f8996.bindPopup(popup_ad3967e199d581510a5e10a4a0c1bdfc)
+        ;
+
+        
+    
+    
+            var circle_marker_611799328e9daafde0d515a0ced20c15 = L.circleMarker(
+                [1.45, 32.1],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_08ab95a82c451928600a47b11f226a3b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a26ab61bcabe7bef796f52940f2d422f = $(`<div id="html_a26ab61bcabe7bef796f52940f2d422f" style="width: 100.0%; height: 100.0%;">         <b>Savannah</b><br>         Average Cases: 6008.14<br>         Hotspot: No         </div>`)[0];
+                popup_08ab95a82c451928600a47b11f226a3b.setContent(html_a26ab61bcabe7bef796f52940f2d422f);
+            
+        
+
+        circle_marker_611799328e9daafde0d515a0ced20c15.bindPopup(popup_08ab95a82c451928600a47b11f226a3b)
+        ;
+
+        
+    
+    
+            var circle_marker_0a1dd990423de059d1a9d393d2ec43de = L.circleMarker(
+                [-0.55, 30.15],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_a4f2afcb40ef57e74ecfe44e9dbf2733 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2c5b1081a7bd7aab209a24af637ed9a = $(`<div id="html_f2c5b1081a7bd7aab209a24af637ed9a" style="width: 100.0%; height: 100.0%;">         <b>Greater Bushenyi</b><br>         Average Cases: 5693.36<br>         Hotspot: No         </div>`)[0];
+                popup_a4f2afcb40ef57e74ecfe44e9dbf2733.setContent(html_f2c5b1081a7bd7aab209a24af637ed9a);
+            
+        
+
+        circle_marker_0a1dd990423de059d1a9d393d2ec43de.bindPopup(popup_a4f2afcb40ef57e74ecfe44e9dbf2733)
+        ;
+
+        
+    
+    
+            var circle_marker_a4332879f226dbc5a234c265977c81ee = L.circleMarker(
+                [2.95, 32.3],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_d03d0130f84fc9bd0b69fddaeb6a2488 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_81f4f15ab83fae025e6a4d05362f3a82 = $(`<div id="html_81f4f15ab83fae025e6a4d05362f3a82" style="width: 100.0%; height: 100.0%;">         <b>Aswa West</b><br>         Average Cases: 5624.29<br>         Hotspot: No         </div>`)[0];
+                popup_d03d0130f84fc9bd0b69fddaeb6a2488.setContent(html_81f4f15ab83fae025e6a4d05362f3a82);
+            
+        
+
+        circle_marker_a4332879f226dbc5a234c265977c81ee.bindPopup(popup_d03d0130f84fc9bd0b69fddaeb6a2488)
+        ;
+
+        
+    
+    
+            var circle_marker_7ec618dbc48654f292f29db4dda4c3b4 = L.circleMarker(
+                [0.55, 34.05],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_82ab75ef4e7492d7b38c229ef53cddb5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c21e8126d282885de7263a8e75477c0d = $(`<div id="html_c21e8126d282885de7263a8e75477c0d" style="width: 100.0%; height: 100.0%;">         <b>Bukedi South</b><br>         Average Cases: 5585.77<br>         Hotspot: No         </div>`)[0];
+                popup_82ab75ef4e7492d7b38c229ef53cddb5.setContent(html_c21e8126d282885de7263a8e75477c0d);
+            
+        
+
+        circle_marker_7ec618dbc48654f292f29db4dda4c3b4.bindPopup(popup_82ab75ef4e7492d7b38c229ef53cddb5)
+        ;
+
+        
+    
+    
+            var circle_marker_6997e78a8c1cef04bc93f6fa1b39f936 = L.circleMarker(
+                [0.55, 32.85],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_3954350a273701d3e29a5d0a4866b5b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ea2e7472b057bb7a62f34c62e554d340 = $(`<div id="html_ea2e7472b057bb7a62f34c62e554d340" style="width: 100.0%; height: 100.0%;">         <b>Sezibwa</b><br>         Average Cases: 5320.21<br>         Hotspot: No         </div>`)[0];
+                popup_3954350a273701d3e29a5d0a4866b5b9.setContent(html_ea2e7472b057bb7a62f34c62e554d340);
+            
+        
+
+        circle_marker_6997e78a8c1cef04bc93f6fa1b39f936.bindPopup(popup_3954350a273701d3e29a5d0a4866b5b9)
+        ;
+
+        
+    
+    
+            var circle_marker_b70e0a06eb2e87e73f5fa7efb8c0aa22 = L.circleMarker(
+                [0.15, 31.55],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_4783756317c4ca6da0977a8f86bcf69a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3910bad8d07b046727e2ea11aa75836f = $(`<div id="html_3910bad8d07b046727e2ea11aa75836f" style="width: 100.0%; height: 100.0%;">         <b>Katonga</b><br>         Average Cases: 5237.55<br>         Hotspot: No         </div>`)[0];
+                popup_4783756317c4ca6da0977a8f86bcf69a.setContent(html_3910bad8d07b046727e2ea11aa75836f);
+            
+        
+
+        circle_marker_b70e0a06eb2e87e73f5fa7efb8c0aa22.bindPopup(popup_4783756317c4ca6da0977a8f86bcf69a)
+        ;
+
+        
+    
+    
+            var circle_marker_4335ad96260b235bf52090456373c71f = L.circleMarker(
+                [2.55, 34.65],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_442e90012c8a6fb98b1d77eb556a7b09 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9746cd2773b11085283f319c94011568 = $(`<div id="html_9746cd2773b11085283f319c94011568" style="width: 100.0%; height: 100.0%;">         <b>Mt Moroto</b><br>         Average Cases: 4477.07<br>         Hotspot: No         </div>`)[0];
+                popup_442e90012c8a6fb98b1d77eb556a7b09.setContent(html_9746cd2773b11085283f319c94011568);
+            
+        
+
+        circle_marker_4335ad96260b235bf52090456373c71f.bindPopup(popup_442e90012c8a6fb98b1d77eb556a7b09)
+        ;
+
+        
+    
+    
+            var circle_marker_377e5395bd64759993bb098abf04df38 = L.circleMarker(
+                [3.1, 32.9],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_722b523675a053b6e810aafc69861d9e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9b1bbe752c62890875542b418633f8e6 = $(`<div id="html_9b1bbe752c62890875542b418633f8e6" style="width: 100.0%; height: 100.0%;">         <b>Aswa East</b><br>         Average Cases: 4111.67<br>         Hotspot: No         </div>`)[0];
+                popup_722b523675a053b6e810aafc69861d9e.setContent(html_9b1bbe752c62890875542b418633f8e6);
+            
+        
+
+        circle_marker_377e5395bd64759993bb098abf04df38.bindPopup(popup_722b523675a053b6e810aafc69861d9e)
+        ;
+
+        
+    
+    
+            var circle_marker_b86f85da309499e74790bc7e96df6c4f = L.circleMarker(
+                [1.05, 33.95],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_bcbee38efc8ed3df9630ac06b17d9694 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_05a5e7a92e9a59b66769621c8b7a3dfa = $(`<div id="html_05a5e7a92e9a59b66769621c8b7a3dfa" style="width: 100.0%; height: 100.0%;">         <b>Bukedi North</b><br>         Average Cases: 4066.19<br>         Hotspot: No         </div>`)[0];
+                popup_bcbee38efc8ed3df9630ac06b17d9694.setContent(html_05a5e7a92e9a59b66769621c8b7a3dfa);
+            
+        
+
+        circle_marker_b86f85da309499e74790bc7e96df6c4f.bindPopup(popup_bcbee38efc8ed3df9630ac06b17d9694)
+        ;
+
+        
+    
+    
+            var circle_marker_c33bc7ed656083bca3374ea70d629389 = L.circleMarker(
+                [3.35, 31.0],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_b52febfea50db2386a2518041f0ce67a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5d2a04b0e5c22b56db016528475d5a47 = $(`<div id="html_5d2a04b0e5c22b56db016528475d5a47" style="width: 100.0%; height: 100.0%;">         <b>North West Nile</b><br>         Average Cases: 3892.32<br>         Hotspot: No         </div>`)[0];
+                popup_b52febfea50db2386a2518041f0ce67a.setContent(html_5d2a04b0e5c22b56db016528475d5a47);
+            
+        
+
+        circle_marker_c33bc7ed656083bca3374ea70d629389.bindPopup(popup_b52febfea50db2386a2518041f0ce67a)
+        ;
+
+        
+    
+    
+            var circle_marker_94092ed15c7971dd87f815073ef157cc = L.circleMarker(
+                [0.45, 33.2],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_5ccb693e0f9d80f524be842778f55e70 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5333636f182dfb57de4f12001955010b = $(`<div id="html_5333636f182dfb57de4f12001955010b" style="width: 100.0%; height: 100.0%;">         <b>Kiira</b><br>         Average Cases: 3800.06<br>         Hotspot: No         </div>`)[0];
+                popup_5ccb693e0f9d80f524be842778f55e70.setContent(html_5333636f182dfb57de4f12001955010b);
+            
+        
+
+        circle_marker_94092ed15c7971dd87f815073ef157cc.bindPopup(popup_5ccb693e0f9d80f524be842778f55e70)
+        ;
+
+        
+    
+    
+            var circle_marker_e745f679c9b207e2cdf89955a3f4e287 = L.circleMarker(
+                [0.18, 30.08],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_3707afa174c8771f168b8496a210264e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d9fc7239305dd7291b27cc91ae0aec8 = $(`<div id="html_8d9fc7239305dd7291b27cc91ae0aec8" style="width: 100.0%; height: 100.0%;">         <b>Rwenzori East</b><br>         Average Cases: 2882.70<br>         Hotspot: No         </div>`)[0];
+                popup_3707afa174c8771f168b8496a210264e.setContent(html_8d9fc7239305dd7291b27cc91ae0aec8);
+            
+        
+
+        circle_marker_e745f679c9b207e2cdf89955a3f4e287.bindPopup(popup_3707afa174c8771f168b8496a210264e)
+        ;
+
+        
+    
+    
+            var circle_marker_ab6fbf065d4db4909c2265f91513a797 = L.circleMarker(
+                [3.75, 34.65],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_86e7a5c1e2146b747267e0bab896c7e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_587dae9e678b4775799979b2dab961da = $(`<div id="html_587dae9e678b4775799979b2dab961da" style="width: 100.0%; height: 100.0%;">         <b>Kidepo</b><br>         Average Cases: 2148.05<br>         Hotspot: No         </div>`)[0];
+                popup_86e7a5c1e2146b747267e0bab896c7e3.setContent(html_587dae9e678b4775799979b2dab961da);
+            
+        
+
+        circle_marker_ab6fbf065d4db4909c2265f91513a797.bindPopup(popup_86e7a5c1e2146b747267e0bab896c7e3)
+        ;
+
+        
+    
+    
+            var circle_marker_d478ab57760f698d5cbeaf8b75f4aa90 = L.circleMarker(
+                [0.315, 32.583],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7d5796610f15fe637d7bf4e471eecf96);
+        
+    
+        var popup_041bbb87293f447407d5f72f59032f5f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c66200e69cfb7b3c57c912d9dcdebdd7 = $(`<div id="html_c66200e69cfb7b3c57c912d9dcdebdd7" style="width: 100.0%; height: 100.0%;">         <b>C.I.D Headquarters</b><br>         Average Cases: 1412.76<br>         Hotspot: No         </div>`)[0];
+                popup_041bbb87293f447407d5f72f59032f5f.setContent(html_c66200e69cfb7b3c57c912d9dcdebdd7);
+            
+        
+
+        circle_marker_d478ab57760f698d5cbeaf8b75f4aa90.bindPopup(popup_041bbb87293f447407d5f72f59032f5f)
+        ;
+
+        
+    
+</script>
+</html>
